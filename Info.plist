@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleName</key><string>Tiles</string>
+	<key>CFBundleDisplayName</key><string>Tiles</string>
+	<key>CFBundleIdentifier</key><string>dev.tiles.app</string>
+	<key>CFBundleExecutable</key><string>Tiles</string>
+	<key>CFBundlePackageType</key><string>APPL</string>
+	<key>CFBundleShortVersionString</key><string>dev</string>
+	<key>CFBundleVersion</key><string>1</string>
+	<key>LSMinimumSystemVersion</key><string>13.0</string>
+	<key>LSUIElement</key><true/>
+	<key>RFUpdateRepo</key><string>jackoregankenny/tiles</string>
+	<key>NSHighResolutionCapable</key><true/>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key><string>Tiles actions</string>
+			<key>CFBundleURLSchemes</key><array><string>tiles</string></array>
+		</dict>
+	</array>
+</dict>
+</plist>

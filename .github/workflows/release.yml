@@ -1,0 +1,26 @@
+# Pushing a tag like v0.3.0 builds Tiles, runs the self-test and publishes a GitHub Release
+# with Tiles.zip and its SHA-256 checksum. The app updates from these releases.
+name: Release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Self-tests
+        run: ./build.sh test
+      - name: Build release
+        run: ./build.sh dist "${GITHUB_REF_NAME#v}"
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" dist/* \
+            --title "$GITHUB_REF_NAME" --generate-notes
